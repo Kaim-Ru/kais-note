@@ -4,6 +4,19 @@
 @import url('./post.css');
 @import url('./toc.css');
 
+@theme {
+  --color-mikxc-primary-50: #bbadd2;
+  --color-mikxc-primary-100: #b0a2c9;
+  --color-mikxc-primary-200: #9c8cb8;
+  --color-mikxc-primary-300: #8976a7;
+  --color-mikxc-primary-400: #756293;
+  --color-mikxc-primary-500: #5f5077;
+  --color-mikxc-primary-600: #4a3f5c;
+  --color-mikxc-primary-700: #372f44;
+  --color-mikxc-primary-800: #251f2e;
+  --color-mikxc-primary-900: #130f18;
+  --color-mikxc-primary-950: #050407;
+}
 @layer base {
   /* body {
     background-color: var(--colors-loContrast);
@@ -26,13 +39,13 @@
     @apply text-teal-800 dark:text-teal-400;
   }
   .button {
-    @apply center gap-2 py-3 px-4 rounded-lg text-base font-normal bg-teal-700 text-white;
+    @apply gap-2 px-4 py-3 text-base font-normal text-white bg-teal-700 rounded-lg center;
   }
   .icon-btn {
-    @apply text-primary-1 p-3;
+    @apply p-3 text-primary-1;
   }
   .badge {
-    @apply select-none text-xs flex items-center font-bold px-3 py-1 bg-black text-white;
+    @apply flex items-center px-3 py-1 text-xs font-bold text-white bg-black select-none;
   }
 }
 
@@ -44,7 +57,7 @@
     @apply flex items-center;
   }
   .wrap {
-    @apply hstack flex-wrap;
+    @apply flex-wrap hstack;
   }
   .center {
     @apply flex items-center justify-center;
