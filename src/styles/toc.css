@@ -7,7 +7,7 @@
 }
 
 .toc-link {
-  @apply text-[14px] text-mikxc-secondary-600 dark:text-mikxc-secondary-500 tracking-[-0.7px] hover:text-mikxc-secondary-500 dark:hover:text-mikxc-secondary-300 flex items-center gap-[11px];
+  @apply text-[17px] text-mikxc-secondary-600 dark:text-mikxc-secondary-500 tracking-[-0.7px] hover:text-mikxc-secondary-500 dark:hover:text-mikxc-secondary-300 flex items-center gap-[11px];
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -23,7 +23,7 @@
 }
 
 .toc-list .toc-list .toc-link {
-  @apply text-[12px] tracking-[-0.6px] gap-[7px];
+  @apply text-[17px] tracking-[-0.6px] gap-[7px];
 }
 
 .toc-list .toc-list .toc-link::before {

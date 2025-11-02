@@ -11,7 +11,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
   return (
     <MainLayout
       main={
-        <div className="relative w-full min-h-screen bg-gray-50 dark:bg-[#130f18] pb-20 overflow-x-hidden">
+        <div className="relative w-full min-h-screen bg-gray-50 dark:bg-[#130f18] pb-20">
           {/* Hero Section with Decorative Images */}
           <div className="relative w-full h-[280px] md:h-[320px] flex flex-col items-center justify-center pt-10 overflow-hidden max-w-full">
             {/* Background decorative article images - positioned behind title */}
@@ -80,7 +80,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
 
                 {/* Articles Grid */}
                 <div
-                  className="grid gap-4 md:gap-6 w-full"
+                  className="grid w-full gap-4 md:gap-6"
                   style={{
                     gridTemplateColumns:
                       'repeat(auto-fill, minmax(min(200px, 100%), 250px))',

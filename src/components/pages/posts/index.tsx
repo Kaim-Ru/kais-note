@@ -34,11 +34,11 @@ export const Posts: React.VFC<Props> = ({ post }) => {
       />
       <MainLayout
         main={
-          <div className="w-full min-h-screen bg-gray-50 dark:bg-[#130f18] pb-20 overflow-x-hidden">
+          <div className="w-full min-h-screen bg-gray-50 dark:bg-[#130f18] pb-20">
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-[51px] px-4 md:px-8 lg:px-[34px] pt-[62px] w-full mx-auto max-w-full">
-              {/* Left Sidebar - TOC and Category Navigation */}
-              <aside className="hidden lg:block w-[259px] flex-shrink-0">
-                <div className="flex flex-col gap-6 sticky top-[67px]">
+              {/* Left Sidebar */}
+              <aside className="hidden lg:block w-[259px] flex-shrink-0 sticky top-[67px] self-start">
+                <div className="flex flex-col gap-6">
                   {/* Table of Contents */}
                   {lg && (
                     <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[18px] py-[4px]">
@@ -46,12 +46,12 @@ export const Posts: React.VFC<Props> = ({ post }) => {
                     </div>
                   )}
 
-                  {/* Category Navigation - アドオン関連 */}
+                  {/* Category Navigation */}
                   <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[13px] py-[4px]">
                     <h3 className="text-[17px] text-gray-800 dark:text-gray-200 font-medium tracking-[-0.85px] h-[38px] flex items-center">
                       アドオン関連：
                     </h3>
-                    {/* Category items */}
+
                     <div className="flex flex-col gap-[2px]">
                       <ToggleSection
                         title="チュートリアル"
@@ -73,9 +73,7 @@ export const Posts: React.VFC<Props> = ({ post }) => {
                         defaultOpen={false}
                         titleClassName="text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"
                       >
-                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
-                          {/* Items can be added here */}
-                        </div>
+                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"></div>
                       </ToggleSection>
 
                       <ToggleSection
@@ -83,9 +81,7 @@ export const Posts: React.VFC<Props> = ({ post }) => {
                         defaultOpen={false}
                         titleClassName="text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"
                       >
-                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
-                          {/* Items can be added here */}
-                        </div>
+                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"></div>
                       </ToggleSection>
                     </div>
                   </div>
@@ -99,10 +95,10 @@ export const Posts: React.VFC<Props> = ({ post }) => {
                 </article>
               </div>
 
-              {/* Right Sidebar - Placeholder */}
-              <aside className="hidden xl:block w-[259px] flex-shrink-0">
+              {/* Right Sidebar */}
+              <aside className="hidden xl:block w-[259px] flex-shrink-0 top-[67px] self-start">
                 <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] p-4 h-[200px]">
-                  {/* Placeholder for future content */}
+                  {/* Placeholder */}
                 </div>
               </aside>
             </div>
