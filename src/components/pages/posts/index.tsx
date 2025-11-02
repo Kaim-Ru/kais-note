@@ -56,7 +56,7 @@ export const Posts: React.VFC<Props> = ({ post }) => {
                       <ToggleSection
                         title="チュートリアル"
                         defaultOpen={true}
-                        titleClassName="text-[17px] text-gray-700 dark:text-gray-300 tracking-[-0.85px]"
+                        titleClassName="text-[17px] text-gray-700 dark:text-gray-400 tracking-[-0.85px]"
                       >
                         <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
                           <div className="h-[29.5px] flex items-center">
