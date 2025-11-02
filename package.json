@@ -61,5 +61,9 @@
     "typescript": "^5.3.0",
     "unified": "^10.1.2",
     "zustand": "^4.0.0-rc.1"
+  },
+  "dependencies": {
+    "remark-gfm": "3",
+    "unist-util-visit": "^5.0.0"
   }
 }

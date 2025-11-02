@@ -120,3 +120,36 @@
 :global(.dark) .markdown hr {
   border-color: #4b5563;
 }
+
+/* Link Card Styles */
+.markdown :global(.link-card) {
+  @apply block my-6 p-4 rounded-lg border-2 no-underline transition-all duration-200;
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
+
+.markdown :global(.link-card:hover) {
+  @apply shadow-lg;
+  border-color: #0d9488;
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+:global(.dark) .markdown :global(.link-card) {
+  border-color: #374151;
+  background-color: #1f2937;
+}
+
+:global(.dark) .markdown :global(.link-card:hover) {
+  border-color: #2dd4bf;
+  background-color: #111827;
+}
+
+.markdown :global(.link-card-url) {
+  @apply block text-sm font-medium break-all;
+  color: #0d9488;
+}
+
+:global(.dark) .markdown :global(.link-card-url) {
+  color: #2dd4bf;
+}
