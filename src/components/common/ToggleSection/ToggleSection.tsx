@@ -15,7 +15,7 @@ export const ToggleSection: React.VFC<Props> = ({
   closeText,
   defaultOpen = false,
   children,
-  titleClassName = 'text-[17px] text-mikxc-primary-100 tracking-[-0.85px]',
+  titleClassName = 'text-[22px] text-gray-700 dark:text-gray-300 tracking-[-0.85px]',
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -26,13 +26,13 @@ export const ToggleSection: React.VFC<Props> = ({
     <div className="flex flex-col gap-[2px]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-[7px] ${titleClassName} hover:text-mikxc-primary-200 transition-colors text-left`}
+        className={`flex items-center gap-[7px] ${titleClassName} hover:text-mikxc-primary-400 dark:hover:text-mikxc-primary-200 transition-colors text-left`}
       >
         <span
           className="transform transition-transform w-[9px] h-[13px] flex items-center justify-center"
           style={{ transform: isOpen ? 'rotate(270deg)' : 'rotate(180deg)' }}
         >
-          <div className="w-0 h-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[13px] border-b-current rotate-[-90deg]"></div>
+          <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[7px] border-b-current rotate-[-90deg]"></div>
         </span>
         <span>{displayText}</span>
       </button>

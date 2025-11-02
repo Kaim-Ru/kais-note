@@ -10,9 +10,113 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply mt-12 mb-4 text-3xl leading-snug;
+  color: #9ca3af;
+}
+
+:global(.dark) .markdown h2 {
+  color: #f3f4f6;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply mt-8 mb-4 text-2xl leading-snug;
+  color: #9ca3af;
+}
+
+:global(.dark) .markdown h3 {
+  color: #f3f4f6;
+}
+
+.markdown a {
+  @apply underline hover:text-teal-700;
+  color: #0d9488;
+}
+
+:global(.dark) .markdown a {
+  color: #2dd4bf;
+}
+
+:global(.dark) .markdown a:hover {
+  color: #5eead4;
+}
+
+.markdown pre {
+  @apply p-4 my-6 overflow-x-auto rounded-lg;
+  background-color: #f3f4f6;
+}
+
+:global(.dark) .markdown pre {
+  background-color: #111827;
+}
+
+.markdown pre code {
+  @apply p-0 bg-transparent;
+}
+
+.markdown code {
+  @apply px-1 py-0.5 rounded text-sm;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+:global(.dark) .markdown code {
+  background-color: #111827;
+  color: #d1d5db;
+}
+
+.markdown blockquote {
+  @apply pl-4 italic border-l-4;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+:global(.dark) .markdown blockquote {
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply pl-8;
+}
+
+.markdown li {
+  @apply my-2;
+}
+
+.markdown img {
+  @apply rounded-lg shadow-md;
+}
+
+.markdown table {
+  @apply w-full my-6 border-collapse;
+}
+
+.markdown th,
+.markdown td {
+  @apply px-4 py-2 border;
+  border-color: #d1d5db;
+}
+
+:global(.dark) .markdown th,
+:global(.dark) .markdown td {
+  border-color: #4b5563;
+}
+
+.markdown th {
+  @apply font-bold;
+  background-color: #f3f4f6;
+}
+
+:global(.dark) .markdown th {
+  background-color: #1f2937;
+}
+
+.markdown hr {
+  @apply my-8;
+  border-color: #d1d5db;
+}
+
+:global(.dark) .markdown hr {
+  border-color: #4b5563;
 }

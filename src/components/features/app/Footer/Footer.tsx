@@ -5,14 +5,14 @@ import { sns } from '@/config/sns';
 
 export const Footer = () => {
   return (
-    <footer>
-      <ContentLayout className="p-10 center bg-[#251f2e]">
-        <div className="vstack items-center gap-4">
+    <footer className="w-full overflow-x-hidden">
+      <ContentLayout className="p-10 center bg-gray-100 dark:bg-[#251f2e] max-w-full">
+        <div className="items-center gap-4 vstack">
           <div className="flex gap-4">
             {sns.map(({ href, icon, label }) => (
               <Link key={href} href={href} passHref>
                 <a
-                  className="text-[#9c8cb8] hover:text-[#bbadd2] active:text-[#756293] transition duration-100"
+                  className="text-gray-600 dark:text-[#9c8cb8] hover:text-gray-800 dark:hover:text-[#bbadd2] active:text-gray-500 dark:active:text-[#756293] transition duration-100"
                   aria-label={label}
                 >
                   {icon}
@@ -20,7 +20,7 @@ export const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="text-[#9c8cb8] text-sm text-center">
+          <div className="text-gray-600 dark:text-[#9c8cb8] text-sm text-center">
             &copy; 2022 - {SITE_NAME}
           </div>
         </div>

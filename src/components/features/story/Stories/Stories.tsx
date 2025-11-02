@@ -9,7 +9,7 @@ type Props = {
 
 export const Stories = ({ posts, icon, title }: Props) => {
   return (
-    <section>
+    <section className="max-w-full overflow-x-hidden">
       <div className="vstack gap-8">
         <h2 className="hstack gap-2 text-primary-1 text-3xl font-bold tracking-tighter leading-tight">
           {icon} {title}

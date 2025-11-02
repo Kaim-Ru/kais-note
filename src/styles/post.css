@@ -30,7 +30,8 @@
 
 .post code {
   font-size: max(12px, 85%) !important;
-  @apply whitespace-nowrap font-mono mx-[2px] py-[2px] px-[3px] rounded-sm text-neutral-700 bg-neutral-100 dark:text-neutral-100 dark:bg-neutral-700 !important;
+  @apply whitespace-nowrap font-mono mx-[2px] py-[2px] px-[3px] rounded-sm !important;
+  @apply text-neutral-700 bg-neutral-100 dark:text-neutral-200 dark:bg-neutral-800 !important;
 }
 
 .post pre code {

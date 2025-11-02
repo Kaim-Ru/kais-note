@@ -12,10 +12,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
       <div
         style={{ gridTemplateRows: 'auto 1fr auto' }}
-        className="grid min-h-screen gap-0 bg-[#130f18]"
+        className="grid min-h-screen gap-0 bg-[#130f18] overflow-x-hidden"
       >
         <Header />
-        <ContentLayout className="px-0 py-0">
+        <ContentLayout className="px-0 py-0 overflow-x-hidden">
           <Component {...pageProps} />
         </ContentLayout>
         <Footer />

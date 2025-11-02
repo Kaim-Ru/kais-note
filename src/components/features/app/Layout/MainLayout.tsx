@@ -21,7 +21,7 @@ export const MainLayout: React.VFC<Props> = ({
   // If aside is null, render full-width layout
   if (!aside) {
     return (
-      <div className={cn(className, 'w-full')}>
+      <div className={cn(className, 'w-full max-w-full overflow-x-hidden')}>
         <main>{main}</main>
         {lg || (
           <Portal>
@@ -35,7 +35,12 @@ export const MainLayout: React.VFC<Props> = ({
   }
 
   return (
-    <div className={cn(className, 'grid grid-cols-1 lg:grid-cols-3 gap-10')}>
+    <div
+      className={cn(
+        className,
+        'grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-full overflow-x-hidden',
+      )}
+    >
       <div className="lg:col-span-2">
         <main>{main}</main>
       </div>

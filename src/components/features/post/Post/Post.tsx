@@ -20,7 +20,7 @@ export const Post: React.VFC<Props> = ({ post }) => {
             className="w-full h-full object-cover"
           />
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#251f2e]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white dark:to-[#251f2e]" />
         </div>
       )}
 

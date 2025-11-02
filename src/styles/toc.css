@@ -7,7 +7,7 @@
 }
 
 .toc-link {
-  @apply text-[14px] text-[#30c461] tracking-[-0.7px] hover:text-[#30c461] flex items-center gap-[11px];
+  @apply text-[14px] text-mikxc-secondary-600 dark:text-mikxc-secondary-500 tracking-[-0.7px] hover:text-mikxc-secondary-500 dark:hover:text-mikxc-secondary-300 flex items-center gap-[11px];
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -17,7 +17,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #30c461;
+  border: 2px solid;
+  @apply border-mikxc-secondary-600 dark:border-mikxc-secondary-500;
   flex-shrink: 0;
 }
 
@@ -28,18 +29,18 @@
 .toc-list .toc-list .toc-link::before {
   width: 12px;
   height: 12px;
-  background-color: #30c461;
+  @apply bg-mikxc-secondary-600 dark:bg-mikxc-secondary-500;
   border: none;
 }
 
 .is-active-link {
-  @apply text-[#166d33];
+  @apply text-mikxc-secondary-400 dark:text-mikxc-secondary-200;
 }
 
 .is-active-link::before {
-  border-color: #166d33;
+  @apply border-mikxc-secondary-400 dark:border-mikxc-secondary-200;
 }
 
 .toc-list .toc-list .is-active-link::before {
-  background-color: #166d33;
+  @apply bg-mikxc-secondary-400 dark:bg-mikxc-secondary-200;
 }

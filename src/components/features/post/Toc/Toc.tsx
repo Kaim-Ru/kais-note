@@ -20,7 +20,7 @@ export const Toc: React.VFC = () => {
         openText="開く"
         closeText="閉じる"
         defaultOpen={true}
-        titleClassName="text-mikxc-primary-300 text-[17px] tracking-[-0.85px]"
+        titleClassName="text-gray-700 dark:text-gray-400 text-[20px] tracking-[-0.85px]"
       >
         <nav className="toc" />
       </ToggleSection>

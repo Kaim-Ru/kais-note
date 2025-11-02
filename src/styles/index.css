@@ -16,8 +16,26 @@
   --color-mikxc-primary-800: #251f2e;
   --color-mikxc-primary-900: #130f18;
   --color-mikxc-primary-950: #050407;
+
+  --color-mikxc-secondary-50: #ccfbf1;
+  --color-mikxc-secondary-100: #99f6e4;
+  --color-mikxc-secondary-200: #5eead4;
+  --color-mikxc-secondary-300: #2dd4bf;
+  --color-mikxc-secondary-400: #14b8a6;
+  --color-mikxc-secondary-500: #0d9488;
+  --color-mikxc-secondary-600: #0f766e;
+  --color-mikxc-secondary-700: #115e59;
+  --color-mikxc-secondary-800: #134e4a;
+  --color-mikxc-secondary-900: #1a7a3a;
+  --color-mikxc-secondary-950: #042f2e;
 }
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
   /* body {
     background-color: var(--colors-loContrast);
     font-family: Yu Gothic, yugothic, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN,
@@ -50,11 +68,25 @@
 
   /* SVG Icon Color Control */
   .svg-icon {
+    /* Light mode: gray-900 (#111827) */
+    filter: brightness(0) saturate(100%) invert(7%) sepia(8%) saturate(2258%)
+      hue-rotate(186deg) brightness(95%) contrast(92%);
+  }
+
+  .dark .svg-icon {
+    /* Dark mode: existing purple tone */
     filter: brightness(0) saturate(100%) invert(47%) sepia(12%) saturate(1234%)
       hue-rotate(226deg) brightness(88%) contrast(88%);
   }
 
   .svg-icon-hover {
+    /* Light mode hover: slightly lighter gray */
+    filter: brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(1000%)
+      hue-rotate(186deg) brightness(90%) contrast(90%);
+  }
+
+  .dark .svg-icon-hover {
+    /* Dark mode hover: existing purple tone */
     filter: brightness(0) saturate(100%) invert(66%) sepia(11%) saturate(926%)
       hue-rotate(226deg) brightness(95%) contrast(89%);
   }

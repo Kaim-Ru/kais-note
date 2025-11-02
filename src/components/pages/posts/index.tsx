@@ -2,7 +2,6 @@ import { NextSeo } from 'next-seo';
 import { ToggleSection } from '@/components/common/ToggleSection';
 import { MainLayout } from '@/components/features/app/Layout';
 import { Post } from '@/components/features/post/Post';
-import { Share } from '@/components/features/post/Share';
 import { Toc } from '@/components/features/post/Toc';
 import { ROOT_URL } from '@/config/app';
 import { useBreakPoint } from '@/hooks/useBreakPoint';
@@ -35,74 +34,75 @@ export const Posts: React.VFC<Props> = ({ post }) => {
       />
       <MainLayout
         main={
-          <div className="w-full min-h-screen bg-[#130f18] pb-20">
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-[51px] px-4 md:px-8 lg:px-[34px] pt-[62px] w-full mx-auto">
-              {/* Left Sidebar - Category Navigation */}
-              <aside className="hidden lg:block w-[187px] flex-shrink-0">
-                <div className="bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[13px] py-[4px] sticky top-[67px]">
-                  <h3 className="text-[17px] text-mikxc-primary-200 font-medium tracking-[-0.85px] h-[38px] flex items-center">
-                    アドオン関連：
-                  </h3>
-                  {/* Category items */}
-                  <div className="flex flex-col gap-[2px]">
-                    <ToggleSection
-                      title="チュートリアル"
-                      defaultOpen={true}
-                      titleClassName="text-[17px] text-mikxc-primary-100 tracking-[-0.85px]"
-                    >
-                      <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-mikxc-primary-300 tracking-[-0.85px]">
-                        <div className="h-[29.5px] flex items-center">
-                          1.はじめに
-                        </div>
-                        <div className="h-[29.5px] flex items-center">
-                          2.インストール
-                        </div>
-                      </div>
-                    </ToggleSection>
+          <div className="w-full min-h-screen bg-gray-50 dark:bg-[#130f18] pb-20 overflow-x-hidden">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-[51px] px-4 md:px-8 lg:px-[34px] pt-[62px] w-full mx-auto max-w-full">
+              {/* Left Sidebar - TOC and Category Navigation */}
+              <aside className="hidden lg:block w-[259px] flex-shrink-0">
+                <div className="flex flex-col gap-6 sticky top-[67px]">
+                  {/* Table of Contents */}
+                  {lg && (
+                    <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[18px] py-[4px]">
+                      <Toc />
+                    </div>
+                  )}
 
-                    <ToggleSection
-                      title="ビヘイビアパック"
-                      defaultOpen={false}
-                      titleClassName="text-[17px] text-mikxc-primary-300 tracking-[-0.85px]"
-                    >
-                      <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-mikxc-primary-300 tracking-[-0.85px]">
-                        {/* Items can be added here */}
-                      </div>
-                    </ToggleSection>
+                  {/* Category Navigation - アドオン関連 */}
+                  <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[13px] py-[4px]">
+                    <h3 className="text-[17px] text-gray-800 dark:text-gray-200 font-medium tracking-[-0.85px] h-[38px] flex items-center">
+                      アドオン関連：
+                    </h3>
+                    {/* Category items */}
+                    <div className="flex flex-col gap-[2px]">
+                      <ToggleSection
+                        title="チュートリアル"
+                        defaultOpen={true}
+                        titleClassName="text-[17px] text-gray-700 dark:text-gray-300 tracking-[-0.85px]"
+                      >
+                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
+                          <div className="h-[29.5px] flex items-center">
+                            1.はじめに
+                          </div>
+                          <div className="h-[29.5px] flex items-center">
+                            2.インストール
+                          </div>
+                        </div>
+                      </ToggleSection>
 
-                    <ToggleSection
-                      title="リソースパック"
-                      defaultOpen={false}
-                      titleClassName="text-[17px] text-mikxc-primary-300 tracking-[-0.85px]"
-                    >
-                      <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-mikxc-primary-300 tracking-[-0.85px]">
-                        {/* Items can be added here */}
-                      </div>
-                    </ToggleSection>
+                      <ToggleSection
+                        title="ビヘイビアパック"
+                        defaultOpen={false}
+                        titleClassName="text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"
+                      >
+                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
+                          {/* Items can be added here */}
+                        </div>
+                      </ToggleSection>
+
+                      <ToggleSection
+                        title="リソースパック"
+                        defaultOpen={false}
+                        titleClassName="text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]"
+                      >
+                        <div className="flex flex-col gap-0 pl-[12px] text-[17px] text-gray-600 dark:text-gray-400 tracking-[-0.85px]">
+                          {/* Items can be added here */}
+                        </div>
+                      </ToggleSection>
+                    </div>
                   </div>
                 </div>
               </aside>
 
               {/* Main Content */}
               <div className="flex-1 min-w-0 max-w-[960px]">
-                <article className="bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] overflow-hidden">
+                <article className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] overflow-hidden">
                   <Post post={post} />
                 </article>
               </div>
 
-              {/* Right Sidebar */}
+              {/* Right Sidebar - Placeholder */}
               <aside className="hidden xl:block w-[259px] flex-shrink-0">
-                <div className="flex flex-col gap-6 sticky top-[67px]">
-                  {/* Table of Contents */}
-                  {lg && (
-                    <div className="bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] px-[18px] py-[4px] h-[260px]">
-                      <Toc />
-                    </div>
-                  )}
-                  {/* Additional Content */}
-                  <div className="bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] h-[359px] p-4">
-                    <Share post={post} />
-                  </div>
+                <div className="bg-white dark:bg-[#251f2e] rounded-[13px] shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_12.5px_6px_rgba(0,0,0,0.25)] p-4 h-[200px]">
+                  {/* Placeholder for future content */}
                 </div>
               </aside>
             </div>
