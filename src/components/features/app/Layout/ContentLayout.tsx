@@ -5,9 +5,7 @@ type Props = React.ComponentPropsWithoutRef<'div'>;
 export const ContentLayout: React.VFC<Props> = ({ children, ...props }) => {
   return (
     <Slot {...props}>
-      <div className="p-6">
-        <div className="container xl:max-w-7xl mx-auto">{children}</div>
-      </div>
+      <div>{children}</div>
     </Slot>
   );
 };

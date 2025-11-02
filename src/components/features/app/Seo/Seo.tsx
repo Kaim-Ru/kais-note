@@ -5,26 +5,27 @@ import { joinPath } from '@/lib/joinPath';
 
 export const Seo = () => {
   const rootPath = useRootPath();
-  const imageURL = joinPath(ROOT_URL, '/assets/author.png');
+  const imageURL = joinPath(ROOT_URL, '/kaisnote_icon.svg');
 
   return (
     <>
       <DefaultSeo
-        defaultTitle="blog"
-        description="blog"
+        defaultTitle="KaisNote"
+        description="管理人のKaimRuが好きなこと(主にマインクラフト)に関する投稿をしていくサイトです。"
         openGraph={{
           type: 'website',
-          title: 'blog',
-          description: 'blog',
-          site_name: 'blog',
+          title: 'KaisNote',
+          description:
+            '管理人のKaimRuが好きなこと(主にマインクラフト)に関する投稿をしていくサイトです。',
+          site_name: 'KaisNote',
           url: ROOT_URL,
           images: [
             {
               url: imageURL,
               width: 512,
               height: 512,
-              alt: 'Og Image Alt',
-              type: 'image/png',
+              alt: 'KaisNote',
+              type: 'image/svg+xml',
             },
           ],
         }}
@@ -34,6 +35,7 @@ export const Seo = () => {
           cardType: 'summary_large_image',
         }}
         additionalLinkTags={[
+          { rel: 'icon', href: `${rootPath}/kaisnote_icon.svg` },
           { rel: 'icon', href: `${rootPath}/favicon.ico` },
           {
             rel: 'icon',
@@ -50,12 +52,12 @@ export const Seo = () => {
           {
             rel: 'apple-touch-icon',
             sizes: '180x180',
-            href: `${rootPath}/favicons/apple-touch-icon-180x180.png`,
+            href: `${rootPath}/favicons/apple-touch-icon.png`,
           },
           {
             rel: 'mask-icon',
             href: `${rootPath}/favicons/safari-pinned-tab.svg`,
-            color: '#5bbad5',
+            color: '#9c8cb8',
           },
         ]}
       />

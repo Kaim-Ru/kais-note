@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { MdOutlineContentCopy } from 'react-icons/md';
 import tocbot from 'tocbot';
+import { ToggleSection } from '@/components/common/ToggleSection';
 
 export const Toc: React.VFC = () => {
   useEffect(() => {
     tocbot.init({
       tocSelector: '.toc',
-      contentSelector: '.post',
+      contentSelector: 'article',
       headingSelector: 'h1, h2, h3',
       scrollSmoothOffset: -80,
     });
@@ -15,14 +15,15 @@ export const Toc: React.VFC = () => {
   }, []);
 
   return (
-    <div className="select-none vstack gap-3 p-6 bg-primary-1">
-      <div className="center">
-        <div className="center gap-2 py-2 px-3 border-b-2 border-teal-700 dark:border-teal-400 text-base font-bold text-primary-1">
-          <MdOutlineContentCopy />
-          目次
-        </div>
-      </div>
-      <nav className="toc" />
+    <div className="select-none flex flex-col gap-[6px]">
+      <ToggleSection
+        openText="開く"
+        closeText="閉じる"
+        defaultOpen={true}
+        titleClassName="text-mikxc-primary-300 text-[17px] tracking-[-0.85px]"
+      >
+        <nav className="toc" />
+      </ToggleSection>
     </div>
   );
 };

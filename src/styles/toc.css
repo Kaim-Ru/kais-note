@@ -1,19 +1,45 @@
 .toc-list {
-  @apply vstack  gap-3;
+  @apply flex flex-col gap-[6px];
 }
 
 .toc-list .toc-list {
-  @apply vstack  gap-2 pl-4 mt-1;
+  @apply flex flex-col gap-[6px] pl-[20px] mt-[6px];
 }
 
 .toc-link {
-  @apply text-sm sm:text-base font-bold text-neutral-400 dark:text-neutral-400 hover:text-teal-800 dark:hover:text-teal-400;
+  @apply text-[14px] text-[#30c461] tracking-[-0.7px] hover:text-[#30c461] flex items-center gap-[11px];
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.toc-link::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #30c461;
+  flex-shrink: 0;
 }
 
 .toc-list .toc-list .toc-link {
-  @apply text-sm;
+  @apply text-[12px] tracking-[-0.6px] gap-[7px];
+}
+
+.toc-list .toc-list .toc-link::before {
+  width: 12px;
+  height: 12px;
+  background-color: #30c461;
+  border: none;
 }
 
 .is-active-link {
-  @apply text-neutral-900 dark:text-teal-400;
+  @apply text-[#166d33];
+}
+
+.is-active-link::before {
+  border-color: #166d33;
+}
+
+.toc-list .toc-list .is-active-link::before {
+  background-color: #166d33;
 }

@@ -1,6 +1,4 @@
-import { AiTwotoneTags } from 'react-icons/ai';
 import { Date } from '@/components/common/Date';
-import { Image } from '@/components/common/Image';
 import { Link } from '@/components/common/Link';
 
 type Props = {
@@ -10,32 +8,31 @@ type Props = {
   tags: string[];
 };
 
-export const PostHeader = ({ title, coverImage, date, tags }: Props) => {
+export const PostHeader = ({ title, date, tags }: Props) => {
   return (
-    <div className="vstack gap-4">
-      <div className="w-full h-64 sm:h-80">
-        <Image
-          src={coverImage}
-          alt={`Cover Image for ${title}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <h1 className="text-primary-1 text-3xl md:text-4xl font-bold tracking-tighter leading-tight">
+    <div className="flex flex-col gap-2 pt-[36px] pb-8">
+      {/* Title */}
+      <h1 className="text-[32px] text-mikxc-primary-200 font-bold tracking-[-1.6px] leading-tight">
         {title}
       </h1>
-      <div className="wrap gap-4">
+
+      {/* Date */}
+      <div className="text-[18px] text-mikxc-primary-500 font-bold tracking-[-0.9px]">
         <Date date={date} />
-        <div className="wrap gap-2">
-          <span className="select-none text-primary-1">
-            <AiTwotoneTags />
-          </span>
+      </div>
+
+      {/* Tags */}
+      {tags && tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-2">
           {tags.map((tag) => (
             <Link key={tag} href={`/tags/${tag}`} passHref>
-              <a className="badge">{tag}</a>
+              <a className="px-3 py-1 text-xs font-bold text-white bg-mikxc-primary-600 rounded hover:bg-mikxc-primary-500 transition-colors">
+                {tag}
+              </a>
             </Link>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -6,11 +6,11 @@ type Props = {
 
 export const PostBody = ({ content }: Props) => {
   return (
-    <div className="post">
+    <article className="pb-8">
       <div
-        className={markdownStyles['markdown']}
+        className={`${markdownStyles['markdown']} text-[20px] text-mikxc-primary-200 tracking-[-1px] leading-[1.8]`}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-    </div>
+    </article>
   );
 };

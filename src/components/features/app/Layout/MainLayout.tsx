@@ -18,6 +18,22 @@ export const MainLayout: React.VFC<Props> = ({
 }) => {
   const lg = useBreakPoint('lg');
 
+  // If aside is null, render full-width layout
+  if (!aside) {
+    return (
+      <div className={cn(className, 'w-full')}>
+        <main>{main}</main>
+        {lg || (
+          <Portal>
+            <div className="z-50 fixed left-8 bottom-8">
+              <Hamburger>{hamburgerMenu}</Hamburger>
+            </div>
+          </Portal>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className={cn(className, 'grid grid-cols-1 lg:grid-cols-3 gap-10')}>
       <div className="lg:col-span-2">

@@ -47,6 +47,17 @@
   .badge {
     @apply flex items-center px-3 py-1 text-xs font-bold text-white bg-black select-none;
   }
+
+  /* SVG Icon Color Control */
+  .svg-icon {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(12%) saturate(1234%)
+      hue-rotate(226deg) brightness(88%) contrast(88%);
+  }
+
+  .svg-icon-hover {
+    filter: brightness(0) saturate(100%) invert(66%) sepia(11%) saturate(926%)
+      hue-rotate(226deg) brightness(95%) contrast(89%);
+  }
 }
 
 @layer utilities {
