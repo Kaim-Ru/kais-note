@@ -9,7 +9,7 @@ export const Profile = () => (
         <img
           className="object-cover rounded-full absolute inset-0 w-full h-full"
           alt="avatar"
-          src={withBasePath("/assets/author.jpeg")}
+          src={withBasePath('/assets/author.jpeg')}
         />
       </div>
       <h1 className="text-2xl font-semibold text-primary-1">Next.js</h1>
