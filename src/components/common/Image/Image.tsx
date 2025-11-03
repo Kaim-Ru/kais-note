@@ -23,7 +23,15 @@ export const Image = React.forwardRef<HTMLElement, ImageProps>(
     const shouldUseFill = !width && !height && !layout;
 
     if (shouldUseFill) {
-      return <NextImage src={imgPath} alt={alt} layout="fill" {...props} />;
+      return (
+        <NextImage
+          src={imgPath}
+          alt={alt}
+          layout="fill"
+          unoptimized
+          {...props}
+        />
+      );
     }
 
     return (
@@ -33,6 +41,7 @@ export const Image = React.forwardRef<HTMLElement, ImageProps>(
         width={width}
         height={height}
         layout={layout}
+        unoptimized
         {...props}
       />
     );

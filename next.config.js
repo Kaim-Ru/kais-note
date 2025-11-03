@@ -7,9 +7,9 @@ const nextConfig = {
   basePath: basePath,
   assetPrefix: basePath,
   trailingSlash: true,
-  output: 'export',
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.js',
   },
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { Image } from '@/components/common/Image';
 import { Link } from '@/components/common/Link';
 import { useDarkMode } from '@/hooks/useDarkMode';
 
