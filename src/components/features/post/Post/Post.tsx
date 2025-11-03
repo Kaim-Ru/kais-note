@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/getBasePath';
 import { PostType } from '@/types/post';
 import { PostBody } from './PostBody';
 import { PostHeader } from './PostHeader';
@@ -15,7 +16,7 @@ export const Post: React.VFC<Props> = ({ post }) => {
       {coverImage && (
         <div className="relative h-[150px] sm:h-[180px] md:h-[204px] w-full rounded-tl-[13px] rounded-tr-[13px] overflow-hidden">
           <img
-            src={coverImage}
+            src={withBasePath(coverImage)}
             alt={title}
             className="w-full h-full object-cover"
           />

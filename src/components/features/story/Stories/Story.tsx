@@ -1,6 +1,6 @@
 import { Date } from '@/components/common/Date';
-import { Image } from '@/components/common/Image';
 import { Link } from '@/components/common/Link';
+import { withBasePath } from '@/lib/getBasePath';
 
 type Props = {
   title: string;
@@ -15,11 +15,10 @@ export const Story = ({ title, coverImage, date, excerpt, slug }: Props) => {
     <Link href={`/posts/${slug}`}>
       <a className="w-full h-full max-w-full overflow-hidden cursor-pointer select-none vstack md:flex-row focus:outline-2">
         <div className="relative flex-shrink-0 w-full center md:w-1/3 h-52 md:h-full bg-neutral-50 md:bg-transparent">
-          <Image
-            src={coverImage}
-            alt={`Cover Image for ${title}`}
-            className="object-cover"
-            layout="fill"
+          <img
+            src={withBasePath(coverImage)}
+            alt={`Cover for ${title}`}
+            className="object-cover absolute inset-0 w-full h-full"
           />
         </div>
         <div className="gap-2 p-4 md:w-2/3 md:p-6 vstack bg-primary-1">

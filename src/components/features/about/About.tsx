@@ -1,4 +1,5 @@
 import { formatDateWithTime } from '@/lib/date';
+import { withBasePath } from '@/lib/getBasePath';
 import { AboutType } from '@/types/about';
 
 type Props = {
@@ -30,7 +31,7 @@ export const About: React.VFC<Props> = ({ about }) => {
       <div className="flex flex-col items-center gap-[9px] w-full max-w-full sm:max-w-[466px] mx-auto mb-12 sm:mb-16 md:mb-20">
         <div className="w-[184px] h-[184px] rounded-full overflow-hidden flex-shrink-0">
           <img
-            src={authorImage}
+            src={withBasePath(authorImage)}
             alt={authorName}
             className="object-cover w-full h-full"
           />
