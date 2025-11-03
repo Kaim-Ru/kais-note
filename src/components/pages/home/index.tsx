@@ -1,6 +1,7 @@
 import { Link } from '@/components/common/Link';
 import { MainLayout } from '@/components/features/app/Layout';
 import { formatDate } from '@/lib/date';
+import { withBasePath } from '@/lib/getBasePath';
 import { PostType } from '@/types/post';
 
 type Props = {
@@ -17,28 +18,28 @@ export const Home: React.VFC<Props> = ({ posts }) => {
             {/* Background decorative article images - positioned behind title */}
             <div className="hidden xl:block absolute left-[-20px] top-[73px] w-[262px] h-[147px] opacity-30 rounded overflow-hidden z-0">
               <img
-                src="/assets/blog/hello-world/cover.jpg"
+                src={withBasePath('/assets/blog/hello-world/cover.jpg')}
                 alt=""
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="hidden xl:block absolute left-[264px] top-[147px] w-[247px] h-[141px] opacity-30 rounded overflow-hidden z-0">
               <img
-                src="/assets/blog/dynamic-routing/cover.jpg"
+                src={withBasePath('/assets/blog/dynamic-routing/cover.jpg')}
                 alt=""
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="hidden xl:block absolute right-[326px] top-[70px] w-[213px] h-[120px] opacity-30 rounded overflow-hidden z-0">
               <img
-                src="/assets/blog/preview/cover.jpg"
+                src={withBasePath('/assets/blog/preview/cover.jpg')}
                 alt=""
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="hidden xl:block absolute right-[-20px] top-[112px] w-[276px] h-[155px] opacity-30 rounded overflow-hidden z-0">
               <img
-                src="/assets/blog/dynamic-routing/cover.jpg"
+                src={withBasePath('/assets/blog/dynamic-routing/cover.jpg')}
                 alt=""
                 className="object-cover w-full h-full"
               />
@@ -48,7 +49,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
             <div className="relative z-20 px-4 mb-6 md:mb-8">
               <div className="absolute inset-0 -m-4 bg-gray-50 dark:bg-[#130f18] blur-xl opacity-80 z-[-1]"></div>
               <img
-                src="/kaisnote_title.svg"
+                src={withBasePath('/kaisnote_title.svg')}
                 alt="KaisNote"
                 className="h-[80px] md:h-[100px] w-auto object-contain relative z-10"
               />
@@ -68,7 +69,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
                 {/* Section Title */}
                 <div className="flex items-center gap-3 mb-6 md:mb-8">
                   <img
-                    src="/rectangle.svg"
+                    src={withBasePath('/rectangle.svg')}
                     alt=""
                     className="w-[37px] h-[37px] flex-shrink-0 opacity-40"
                     style={{ mixBlendMode: 'screen' }}
@@ -94,7 +95,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
                           <div className="w-full h-[141px] bg-gradient-to-br from-blue-500 to-purple-500 rounded shadow-[0px_5px_4px_3px_rgba(0,0,0,0.06)] mb-3 md:mb-4 overflow-hidden">
                             {post.coverImage ? (
                               <img
-                                src={post.coverImage}
+                                src={withBasePath(post.coverImage)}
                                 alt={post.title}
                                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                               />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Image } from '@/components/common/Image';
 import { Link } from '@/components/common/Link';
 import { useDarkMode } from '@/hooks/useDarkMode';
+import { withBasePath } from '@/lib/getBasePath';
 
 export const Header = () => {
   const { dark, toggle } = useDarkMode();
@@ -25,11 +25,9 @@ export const Header = () => {
         {/* Logo */}
         <Link href="/" passHref>
           <a className="flex items-center h-[33px] hover:opacity-80 transition-opacity">
-            <Image
-              src="/kaisnote_title.svg"
+            <img
+              src={withBasePath('/kaisnote_title.svg')}
               alt="KaisNote"
-              width={150}
-              height={33}
               className="object-contain w-auto h-full"
             />
           </a>
@@ -40,33 +38,27 @@ export const Header = () => {
           <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
             <Link href="/posts/page/1" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <Image
-                  src="/assets/by_files.svg"
+                <img
+                  src={withBasePath('/assets/by_files.svg')}
                   alt="ファイル別もくじ"
-                  width={130}
-                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
             </Link>
             <Link href="/tags" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <Image
-                  src="/assets/by_feature.svg"
+                <img
+                  src={withBasePath('/assets/by_feature.svg')}
                   alt="機能別もくじ"
-                  width={105}
-                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
             </Link>
             <Link href="/tags" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <Image
-                  src="/assets/by_tags.svg"
+                <img
+                  src={withBasePath('/assets/by_tags.svg')}
                   alt="タグ別"
-                  width={48}
-                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
@@ -75,11 +67,9 @@ export const Header = () => {
 
           {/* Search Box */}
           <div className="hidden lg:flex w-[200px] xl:w-[280px] 2xl:w-[347px] h-[32px] bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 bottom-1 rounded-lg items-center px-3 gap-2">
-            <Image
-              src="/assets/search.svg"
+            <img
+              src={withBasePath('/assets/search.svg')}
               alt="検索"
-              width={18}
-              height={18}
               className="flex-shrink-0 w-4 h-4 svg-icon"
             />
             <input
@@ -91,11 +81,9 @@ export const Header = () => {
 
           <Link href="/about" passHref>
             <a className="flex items-center gap-1.5 transition-opacity group">
-              <Image
-                src="/assets/About.svg"
+              <img
+                src={withBasePath('/assets/About.svg')}
                 alt="About"
-                width={60}
-                height={80}
                 className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
               />
             </a>
@@ -186,11 +174,9 @@ export const Header = () => {
               {/* Navigation Links */}
               <Link href="/posts/page/1" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <Image
-                    src="/assets/by_files.svg"
+                  <img
+                    src={withBasePath('/assets/by_files.svg')}
                     alt="ファイル別もくじ"
-                    width={130}
-                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all translate-x-[-11px]"
                   />
                 </a>
@@ -198,11 +184,9 @@ export const Header = () => {
 
               <Link href="/tags" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <Image
-                    src="/assets/by_feature.svg"
+                  <img
+                    src={withBasePath('/assets/by_feature.svg')}
                     alt="機能別もくじ"
-                    width={105}
-                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all translate-x-[-11px]"
                   />
                 </a>
@@ -210,11 +194,9 @@ export const Header = () => {
 
               <Link href="/tags" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <Image
-                    src="/assets/by_tags.svg"
+                  <img
+                    src={withBasePath('/assets/by_tags.svg')}
                     alt="タグ別"
-                    width={48}
-                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                   />
                 </a>
@@ -222,11 +204,9 @@ export const Header = () => {
 
               <Link href="/about" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <Image
-                    src="/assets/About.svg"
+                  <img
+                    src={withBasePath('/assets/About.svg')}
                     alt="About"
-                    width={60}
-                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                   />
                 </a>
