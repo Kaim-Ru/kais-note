@@ -1,16 +1,21 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base sm:text-lg leading-relaxed;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  @apply my-4 sm:my-5 md:my-6;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .markdown h2 {
-  @apply mt-12 mb-4 text-3xl leading-snug;
+  @apply mt-8 sm:mt-10 md:mt-12 mb-3 md:mb-4 text-2xl md:text-3xl leading-snug;
   color: #9ca3af;
 }
 
@@ -19,7 +24,7 @@
 }
 
 .markdown h3 {
-  @apply mt-8 mb-4 text-2xl leading-snug;
+  @apply mt-6 sm:mt-7 md:mt-8 mb-3 md:mb-4 text-xl md:text-2xl leading-snug;
   color: #9ca3af;
 }
 
@@ -41,8 +46,9 @@
 }
 
 .markdown pre {
-  @apply p-4 my-6 overflow-x-auto rounded-lg;
+  @apply p-3 md:p-4 my-4 sm:my-5 md:my-6 overflow-x-auto rounded-lg;
   background-color: #f3f4f6;
+  max-width: 100%;
 }
 
 :global(.dark) .markdown pre {
@@ -50,13 +56,18 @@
 }
 
 .markdown pre code {
-  @apply p-0 bg-transparent;
+  @apply p-0 bg-transparent text-xs sm:text-sm;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .markdown code {
-  @apply px-1 py-0.5 rounded text-sm;
+  @apply px-1 py-0.5 rounded text-xs sm:text-sm;
   background-color: #f3f4f6;
   color: #1f2937;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 :global(.dark) .markdown code {
@@ -65,7 +76,7 @@
 }
 
 .markdown blockquote {
-  @apply pl-4 italic border-l-4;
+  @apply pl-3 md:pl-4 italic border-l-2 md:border-l-4;
   color: #374151;
   border-color: #d1d5db;
 }
@@ -77,25 +88,35 @@
 
 .markdown ul,
 .markdown ol {
-  @apply pl-8;
+  @apply pl-6 sm:pl-7 md:pl-8;
 }
 
 .markdown li {
-  @apply my-2;
+  @apply my-1.5 md:my-2;
 }
 
 .markdown img {
-  @apply rounded-lg shadow-md;
+  @apply rounded-lg shadow-md max-w-full h-auto;
 }
 
 .markdown table {
-  @apply w-full my-6 border-collapse;
+  @apply w-full my-4 sm:my-5 md:my-6 border-collapse;
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .markdown table {
+    display: table;
+  }
 }
 
 .markdown th,
 .markdown td {
-  @apply px-4 py-2 border;
+  @apply px-2 sm:px-3 md:px-4 py-1.5 md:py-2 border text-sm sm:text-base;
   border-color: #d1d5db;
+  word-break: break-word;
 }
 
 :global(.dark) .markdown th,
@@ -113,7 +134,7 @@
 }
 
 .markdown hr {
-  @apply my-8;
+  @apply my-6 sm:my-7 md:my-8;
   border-color: #d1d5db;
 }
 
@@ -123,7 +144,7 @@
 
 /* Link Card Styles */
 .markdown :global(.link-card) {
-  @apply block my-6 p-4 rounded-lg border-2 no-underline transition-all duration-200;
+  @apply block p-3 md:p-4 my-4 sm:my-5 md:my-6 no-underline transition-all duration-200 border-2 rounded-lg;
   border-color: #d1d5db;
   background-color: #f9fafb;
 }
@@ -146,7 +167,7 @@
 }
 
 .markdown :global(.link-card-url) {
-  @apply block text-sm font-medium break-all;
+  @apply block text-xs sm:text-sm font-medium break-all;
   color: #0d9488;
 }
 

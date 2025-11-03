@@ -34,10 +34,10 @@ export const PostBody = ({ content }: Props) => {
   }, [router]);
 
   return (
-    <article className="pb-8">
+    <article className="pb-6 sm:pb-7 md:pb-8 w-full overflow-hidden">
       <div
         ref={contentRef}
-        className={`${markdownStyles['markdown']} text-[20px] text-gray-800 dark:text-gray-400 tracking-[-1px] leading-[1.8]`}
+        className={`${markdownStyles['markdown']} text-[16px] sm:text-[18px] md:text-[20px] text-gray-800 dark:text-gray-400 tracking-[-0.8px] sm:tracking-[-0.9px] md:tracking-[-1px] leading-[1.7] sm:leading-[1.75] md:leading-[1.8] w-full`}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </article>

@@ -2,11 +2,13 @@ import fs from 'fs';
 import { resolve } from 'path';
 import matter from 'gray-matter';
 import { paginationOffset } from '@/config/pagination';
+import { AboutType } from '@/types/about';
 import { PostType } from '@/types/post';
 
 const postsDirectory = resolve(process.cwd(), '_posts');
 
-export const getPostSlugs = () => fs.readdirSync(postsDirectory);
+export const getPostSlugs = () =>
+  fs.readdirSync(postsDirectory).filter((slug) => slug !== 'about.md');
 
 export const getMaxPage = () => {
   const postNum = getPostSlugs().length;
@@ -50,4 +52,28 @@ export const getAllPosts = (fields: Field[] = []) => {
     .map((slug) => getPostBySlug(slug, fields))
     .sort((post1, post2) => (post1.date! > post2.date! ? -1 : 1));
   return posts;
+};
+
+export const getAboutContent = (fields: string[] = []) => {
+  const fullPath = resolve(postsDirectory, 'about.md');
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+
+  type Items = {
+    [key: string]: string;
+  };
+
+  const items: Items = {};
+
+  fields.forEach((field) => {
+    if (field === 'content') {
+      items[field] = content;
+    }
+
+    if (typeof data[field] !== 'undefined') {
+      items[field] = data[field];
+    }
+  });
+
+  return items as Partial<AboutType>;
 };

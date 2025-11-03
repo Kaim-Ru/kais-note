@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Link } from '@/components/common/Link';
 import { useDarkMode } from '@/hooks/useDarkMode';
 
@@ -19,14 +20,16 @@ export const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="w-full bg-white dark:bg-[#251f2e] h-[51px] sticky top-0 z-50 shadow-md overflow-x-hidden">
-      <div className="max-w-[1600px] mx-auto h-full flex items-center justify-between px-2 sm:px-4">
+    <header className="w-full bg-white dark:bg-[#251f2e] h-[51px] sticky top-0 z-50 shadow-md overflow-hidden">
+      <div className="max-w-[1600px] w-full mx-auto h-full flex items-center justify-between px-2 sm:px-4">
         {/* Logo */}
         <Link href="/" passHref>
           <a className="flex items-center h-[33px] hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="/kaisnote_title.svg"
               alt="KaisNote"
+              width={150}
+              height={33}
               className="object-contain w-auto h-full"
             />
           </a>
@@ -37,27 +40,33 @@ export const Header = () => {
           <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
             <Link href="/posts/page/1" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <img
+                <Image
                   src="/assets/by_files.svg"
                   alt="ファイル別もくじ"
+                  width={130}
+                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
             </Link>
             <Link href="/tags" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <img
+                <Image
                   src="/assets/by_feature.svg"
                   alt="機能別もくじ"
+                  width={105}
+                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
             </Link>
             <Link href="/tags" passHref>
               <a className="flex items-center gap-1.5 transition-opacity group">
-                <img
+                <Image
                   src="/assets/by_tags.svg"
                   alt="タグ別"
+                  width={48}
+                  height={80}
                   className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                 />
               </a>
@@ -66,9 +75,11 @@ export const Header = () => {
 
           {/* Search Box */}
           <div className="hidden lg:flex w-[200px] xl:w-[280px] 2xl:w-[347px] h-[32px] bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 bottom-1 rounded-lg items-center px-3 gap-2">
-            <img
+            <Image
               src="/assets/search.svg"
               alt="検索"
+              width={18}
+              height={18}
               className="flex-shrink-0 w-4 h-4 svg-icon"
             />
             <input
@@ -80,9 +91,11 @@ export const Header = () => {
 
           <Link href="/about" passHref>
             <a className="flex items-center gap-1.5 transition-opacity group">
-              <img
+              <Image
                 src="/assets/About.svg"
                 alt="About"
+                width={60}
+                height={80}
                 className="w-auto h-[14px] lg:h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
               />
             </a>
@@ -128,26 +141,28 @@ export const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-700 dark:text-[#9c8cb8] p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="メニュー"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {/* Mobile Menu Button and Sidebar Toggle */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            className="text-gray-700 dark:text-[#9c8cb8] p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="メニュー"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
@@ -171,29 +186,35 @@ export const Header = () => {
               {/* Navigation Links */}
               <Link href="/posts/page/1" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <img
+                  <Image
                     src="/assets/by_files.svg"
                     alt="ファイル別もくじ"
-                    className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
+                    width={130}
+                    height={16}
+                    className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all translate-x-[-11px]"
                   />
                 </a>
               </Link>
 
               <Link href="/tags" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <img
+                  <Image
                     src="/assets/by_feature.svg"
                     alt="機能別もくじ"
-                    className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
+                    width={105}
+                    height={16}
+                    className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all translate-x-[-11px]"
                   />
                 </a>
               </Link>
 
               <Link href="/tags" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <img
+                  <Image
                     src="/assets/by_tags.svg"
                     alt="タグ別"
+                    width={48}
+                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                   />
                 </a>
@@ -201,9 +222,11 @@ export const Header = () => {
 
               <Link href="/about" passHref>
                 <a className="flex items-center gap-3 py-2 text-gray-700 dark:text-[#9c8cb8] hover:text-gray-900 dark:hover:text-white group">
-                  <img
+                  <Image
                     src="/assets/About.svg"
                     alt="About"
+                    width={60}
+                    height={16}
                     className="w-auto h-[16px] svg-icon group-hover:svg-icon-hover transition-all"
                   />
                 </a>

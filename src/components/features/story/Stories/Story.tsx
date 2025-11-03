@@ -13,18 +13,19 @@ type Props = {
 export const Story = ({ title, coverImage, date, excerpt, slug }: Props) => {
   return (
     <Link href={`/posts/${slug}`}>
-      <a className="select-none overflow-hidden w-full h-full vstack md:flex-row cursor-pointer focus:outline-2 max-w-full">
-        <div className="center w-full md:w-1/3 h-52 md:h-full bg-neutral-50 md:bg-transparent flex-shrink-0">
+      <a className="w-full h-full max-w-full overflow-hidden cursor-pointer select-none vstack md:flex-row focus:outline-2">
+        <div className="relative flex-shrink-0 w-full center md:w-1/3 h-52 md:h-full bg-neutral-50 md:bg-transparent">
           <Image
             src={coverImage}
             alt={`Cover Image for ${title}`}
-            className="w-full max-w-xs h-full object-cover"
+            className="object-cover"
+            layout="fill"
           />
         </div>
-        <div className="md:w-2/3 p-4 md:p-6 vstack gap-2 bg-primary-1">
+        <div className="gap-2 p-4 md:w-2/3 md:p-6 vstack bg-primary-1">
           <Date date={date} />
-          <h3 className="text-primary-1 text-xl font-medium">{title}</h3>
-          <p className="text-neutral-700 dark:text-neutral-300 font-normal text-md line-clamp-2 md:line-clamp-3">
+          <h3 className="text-xl font-medium text-primary-1">{title}</h3>
+          <p className="font-normal text-neutral-700 dark:text-neutral-300 text-md line-clamp-2 md:line-clamp-3">
             {excerpt}
           </p>
         </div>

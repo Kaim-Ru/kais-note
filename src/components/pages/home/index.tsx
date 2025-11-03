@@ -80,7 +80,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
 
                 {/* Articles Grid */}
                 <div
-                  className="grid w-full gap-4 md:gap-6"
+                  className="grid justify-center w-full gap-4 sm:justify-start md:gap-6"
                   style={{
                     gridTemplateColumns:
                       'repeat(auto-fill, minmax(min(200px, 100%), 250px))',
@@ -88,7 +88,7 @@ export const Home: React.VFC<Props> = ({ posts }) => {
                 >
                   {posts.map((post) => (
                     <Link key={post.slug} href={`/posts/${post.slug}`} passHref>
-                      <a className="block group max-w-[250px]">
+                      <a className="block group max-w-[250px] mx-auto">
                         <article className="relative">
                           {/* Article Image */}
                           <div className="w-full h-[141px] bg-gradient-to-br from-blue-500 to-purple-500 rounded shadow-[0px_5px_4px_3px_rgba(0,0,0,0.06)] mb-3 md:mb-4 overflow-hidden">

@@ -15,12 +15,12 @@ export const Toc: React.VFC = () => {
   }, []);
 
   return (
-    <div className="select-none flex flex-col gap-[6px]">
+    <div className="select-none flex flex-col gap-[4px] sm:gap-[5px] md:gap-[6px]">
       <ToggleSection
         openText="開く"
         closeText="閉じる"
         defaultOpen={true}
-        titleClassName="text-gray-700 dark:text-gray-400 text-[20px] tracking-[-0.85px]"
+        titleClassName="text-gray-700 dark:text-gray-400 text-[16px] sm:text-[18px] md:text-[20px] tracking-[-0.7px] sm:tracking-[-0.75px] md:tracking-[-0.85px]"
       >
         <nav className="toc" />
       </ToggleSection>

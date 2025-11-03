@@ -3,13 +3,16 @@ import { Link } from '@/components/common/Link';
 import { sns } from '@/config/sns';
 
 export const Profile = () => (
-  <div className="select-none vstack items-center gap-5 p-6 bg-primary-1 max-w-full overflow-x-hidden">
-    <div className="vstack items-center gap-2">
-      <Image
-        className="object-cover w-28 h-28 rounded-full"
-        alt="avatar"
-        src="/assets/author.png"
-      />
+  <div className="items-center max-w-full gap-5 p-6 overflow-x-hidden select-none vstack bg-primary-1">
+    <div className="items-center gap-2 vstack">
+      <div className="relative w-28 h-28">
+        <Image
+          className="object-cover rounded-full"
+          alt="avatar"
+          src="/assets/author.jpeg"
+          layout="fill"
+        />
+      </div>
       <h1 className="text-2xl font-semibold text-primary-1">Next.js</h1>
     </div>
 

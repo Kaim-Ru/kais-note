@@ -14,12 +14,33 @@ https://sub-t.github.io/blog-template/
 
 ## Features
 
-- Responsive design  
-- Dark mode support  
-- Pagination on the article list page  
-- Table of contents  
-- SEO optimized with `next-seo`  
-- OGP support  
+- Responsive design
+- Dark mode support
+- Pagination on the article list page
+- Table of contents
+- SEO optimized with `next-seo`
+- OGP support
+- Customizable About page with `_posts/about.md`
+
+## About Page
+
+The about page can be customized by editing the `_posts/about.md` file.
+
+### Configuration
+
+The frontmatter of `about.md` supports the following fields:
+
+```yaml
+---
+title: 'ABOUT ME' # Page title
+date: '2025-11-02' # Last updated date
+authorName: 'Your Name' # Your name
+authorImage: '/path/to/image.png' # Path to your profile image
+authorIntro: 'Introduction text' # Short introduction (supports \n for line breaks)
+---
+```
+
+The content below the frontmatter will be rendered as Markdown.
 
 ## Development
 
@@ -50,7 +71,7 @@ MIT License
 
 詳細は以下の記事をご覧ください：
 
-[Next.js + GitHub Pagesのブログテンプレートを作った →](https://zenn.dev/subt/articles/957bd5d01485e1)
+[Next.js + GitHub Pages のブログテンプレートを作った →](https://zenn.dev/subt/articles/957bd5d01485e1)
 
 ## デモ
 
@@ -58,12 +79,33 @@ https://sub-t.github.io/blog-template/
 
 ## 特徴
 
-- レスポンシブ対応  
-- ダークモード対応  
-- 記事一覧ページにページネーションあり  
-- 目次付き  
-- `next-seo` による SEO 対策済み  
-- OGP 対応  
+- レスポンシブ対応
+- ダークモード対応
+- 記事一覧ページにページネーションあり
+- 目次付き
+- `next-seo` による SEO 対策済み
+- OGP 対応
+- `_posts/about.md` でカスタマイズ可能な About ページ
+
+## About ページ
+
+About ページは `_posts/about.md` ファイルを編集することでカスタマイズできます。
+
+### 設定項目
+
+`about.md` のフロントマターでは以下のフィールドをサポートしています：
+
+```yaml
+---
+title: 'ABOUT ME' # ページタイトル
+date: '2025-11-02' # 最終更新日
+authorName: 'あなたの名前' # 名前
+authorImage: '/path/to/image.png' # プロフィール画像のパス
+authorIntro: '紹介文' # 短い自己紹介（\nで改行可能）
+---
+```
+
+フロントマター以下のコンテンツは、Markdown としてレンダリングされます。
 
 ## 開発方法
 

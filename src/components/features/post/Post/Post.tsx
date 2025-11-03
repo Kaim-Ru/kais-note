@@ -10,10 +10,10 @@ export const Post: React.VFC<Props> = ({ post }) => {
   const { title, coverImage, date, tags, content } = post;
 
   return (
-    <div className="relative">
+    <div className="relative w-full overflow-hidden">
       {/* Cover Image with Gradient Overlay */}
       {coverImage && (
-        <div className="relative h-[204px] w-full rounded-tl-[13px] rounded-tr-[13px] overflow-hidden">
+        <div className="relative h-[150px] sm:h-[180px] md:h-[204px] w-full rounded-tl-[13px] rounded-tr-[13px] overflow-hidden">
           <img
             src={coverImage}
             alt={title}
@@ -25,7 +25,7 @@ export const Post: React.VFC<Props> = ({ post }) => {
       )}
 
       {/* Content */}
-      <div className="px-[16px] pb-8">
+      <div className="px-[12px] sm:px-[14px] md:px-[16px] pb-6 sm:pb-7 md:pb-8 w-full">
         <PostHeader
           title={title}
           coverImage={coverImage}

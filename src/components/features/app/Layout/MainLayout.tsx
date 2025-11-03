@@ -1,19 +1,18 @@
 import { Portal } from '@radix-ui/react-portal';
 import { useBreakPoint } from '@/hooks/useBreakPoint';
 import { cn } from '@/lib/cn';
-import { Hamburger } from '../Hamburger';
 
 type Props = {
   main: React.ReactElement;
   aside?: React.ReactNode;
-  hamburgerMenu?: React.ReactNode;
+  sidebarToggleButton?: React.ReactNode;
   className?: string;
 };
 
 export const MainLayout: React.VFC<Props> = ({
   main,
   aside,
-  hamburgerMenu,
+  sidebarToggleButton,
   className,
 }) => {
   const lg = useBreakPoint('lg');
@@ -22,11 +21,11 @@ export const MainLayout: React.VFC<Props> = ({
   if (!aside) {
     return (
       <div className={cn(className, 'w-full max-w-full')}>
-        <main>{main}</main>
-        {lg || (
+        <main className="w-full">{main}</main>
+        {sidebarToggleButton && !lg && (
           <Portal>
-            <div className="z-50 fixed left-8 bottom-8">
-              <Hamburger>{hamburgerMenu}</Hamburger>
+            <div className="fixed z-50 right-4 top-[59px]">
+              {sidebarToggleButton}
             </div>
           </Portal>
         )}
@@ -42,16 +41,9 @@ export const MainLayout: React.VFC<Props> = ({
       )}
     >
       <div className="lg:col-span-2">
-        <main>{main}</main>
+        <main className="w-full">{main}</main>
       </div>
       <aside>{aside}</aside>
-      {lg || (
-        <Portal>
-          <div className="z-50 fixed left-8 bottom-8">
-            <Hamburger>{hamburgerMenu}</Hamburger>
-          </div>
-        </Portal>
-      )}
     </div>
   );
 };
